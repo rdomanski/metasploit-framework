@@ -953,7 +953,7 @@ RSpec.describe 'modules/payloads', :content do
                           ancestor_reference_names: [
                               'singles/cmd/unix/reverse_python_ssl'
                           ],
-                          dynamic_size: false,
+                          dynamic_size: true,
                           modules_pathname: modules_pathname,
                           reference_name: 'cmd/unix/reverse_python_ssl'
   end
@@ -2171,6 +2171,17 @@ RSpec.describe 'modules/payloads', :content do
                           dynamic_size: false,
                           modules_pathname: modules_pathname,
                           reference_name: 'osx/x64/meterpreter/reverse_tcp'
+  end
+
+  context 'osx/x64/meterpreter/reverse_tcp_uuid' do
+    it_should_behave_like 'payload cached size is consistent',
+                          ancestor_reference_names: [
+                              'stagers/osx/x64/reverse_tcp_uuid',
+                              'stages/osx/x64/meterpreter'
+                          ],
+                          dynamic_size: false,
+                          modules_pathname: modules_pathname,
+                          reference_name: 'osx/x64/meterpreter/reverse_tcp_uuid'
   end
 
   context 'osx/x64/meterpreter_reverse_http' do
